@@ -3,9 +3,12 @@ import Layout from "./layout"
 import IndexPage from "./pages/index"
 import DashboardPage from "./pages/dashboard"
 import TemplatesPage from "./pages/templates"
+import TemplateEditor from "./pages/templates/editor"
 import ContactsPage from "./pages/contacts"
 import CampaignsPage from "./pages/campaigns"
-import { Mail, Users, Template, LayoutDashboard, CreditCard, Coffee } from "lucide-react"
+import NewCampaignPage from "./pages/campaigns/new"
+import AnalyticsPage from "./pages/analytics"
+import { Mail, Users, Template, LayoutDashboard, CreditCard, Coffee, TrendingUp } from "lucide-react"
 import { ThemeProvider } from "./theme/theme-provider"
 
 const sidebarConfig = {
@@ -29,6 +32,11 @@ const sidebarConfig = {
       label: "Clientes",
       href: "/dashboard/contacts",
       icon: <Users className="h-4 w-4" />
+    },
+    {
+      label: "Análisis",
+      href: "/dashboard/analytics",
+      icon: <TrendingUp className="h-4 w-4" />
     },
     {
       label: "Facturación",
@@ -82,8 +90,12 @@ function App() {
           >
             <Route index element={<DashboardPage />} />
             <Route path="templates" element={<TemplatesPage />} />
+            <Route path="templates/editor" element={<TemplateEditor />} />
+            <Route path="templates/editor/:id" element={<TemplateEditor />} />
             <Route path="contacts" element={<ContactsPage />} />
             <Route path="campaigns" element={<CampaignsPage />} />
+            <Route path="campaigns/new" element={<NewCampaignPage />} />
+            <Route path="analytics" element={<AnalyticsPage />} />
           </Route>
         </Routes>
       </Router>
