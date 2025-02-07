@@ -8,7 +8,9 @@ import ContactsPage from "./pages/contacts"
 import CampaignsPage from "./pages/campaigns"
 import NewCampaignPage from "./pages/campaigns/new"
 import AnalyticsPage from "./pages/analytics"
-import { Mail, Users, Template, LayoutDashboard, CreditCard, Coffee, TrendingUp } from "lucide-react"
+import KPIsPage from "./pages/analytics/kpis"
+import FormsPage from "./pages/forms"
+import { Mail, Users, Template, LayoutDashboard, CreditCard, Coffee, TrendingUp, FormInput } from "lucide-react"
 import { ThemeProvider } from "./theme/theme-provider"
 
 const sidebarConfig = {
@@ -37,6 +39,16 @@ const sidebarConfig = {
       label: "Análisis",
       href: "/dashboard/analytics",
       icon: <TrendingUp className="h-4 w-4" />
+    },
+    {
+      label: "KPIs",
+      href: "/dashboard/analytics/kpis",
+      icon: <TrendingUp className="h-4 w-4" />
+    },
+    {
+      label: "Formularios",
+      href: "/dashboard/forms",
+      icon: <FormInput className="h-4 w-4" />
     },
     {
       label: "Facturación",
@@ -96,6 +108,8 @@ function App() {
             <Route path="campaigns" element={<CampaignsPage />} />
             <Route path="campaigns/new" element={<NewCampaignPage />} />
             <Route path="analytics" element={<AnalyticsPage />} />
+            <Route path="analytics/kpis" element={<KPIsPage />} />
+            <Route path="forms" element={<FormsPage />} />
           </Route>
         </Routes>
       </Router>
