@@ -5,28 +5,28 @@ import DashboardPage from "./pages/dashboard"
 import TemplatesPage from "./pages/templates"
 import ContactsPage from "./pages/contacts"
 import CampaignsPage from "./pages/campaigns"
-import { Mail, Users, Template, LayoutDashboard, CreditCard } from "lucide-react"
+import { Mail, Users, Template, LayoutDashboard, CreditCard, Coffee } from "lucide-react"
 import { ThemeProvider } from "./theme/theme-provider"
 
 const sidebarConfig = {
   items: [
     {
-      label: "Dashboard",
+      label: "Mi Cafetería",
       href: "/dashboard",
       icon: <LayoutDashboard className="h-4 w-4" />
     },
     {
       label: "Campañas",
       href: "/dashboard/campaigns",
-      icon: <Mail className="h-4 w-4" />
+      icon: <Coffee className="h-4 w-4" />
     },
     {
-      label: "Plantillas",
+      label: "Menú de Plantillas",
       href: "/dashboard/templates",
       icon: <Template className="h-4 w-4" />
     },
     {
-      label: "Contactos",
+      label: "Clientes",
       href: "/dashboard/contacts",
       icon: <Users className="h-4 w-4" />
     },
@@ -36,7 +36,7 @@ const sidebarConfig = {
       icon: <CreditCard className="h-4 w-4" />
     }
   ],
-  companyName: "EmailMarketing"
+  companyName: "Cafetería Inmobiliaria"
 }
 
 function App() {
@@ -51,9 +51,9 @@ function App() {
               <Layout
                 showSidebar={false}
                 header={{
-                  title: "EmailMarketing",
+                  title: "Cafetería Inmobiliaria",
                   navigation: [
-                    { label: "Características", href: "#features" },
+                    { label: "Nuestro Menú", href: "#features" },
                     { label: "Precios", href: "#pricing" },
                     { label: "Contacto", href: "/contact" }
                   ],
