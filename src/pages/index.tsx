@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { ArrowRight, Mail, Building2, CreditCard } from "lucide-react"
+import { ArrowRight, Coffee, Building2, Mail, CreditCard } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -10,19 +10,19 @@ export default function IndexPage() {
 
   const features = [
     {
-      icon: <Mail className="h-8 w-8 text-primary" />,
-      title: "Plantillas Profesionales",
-      description: "Plantillas de email diseñadas específicamente para inmobiliarias"
+      icon: <Coffee className="h-8 w-8 text-primary" />,
+      title: "Plantillas Frescas como un Café",
+      description: "Emails profesionales listos para servir a tus clientes"
     },
     {
       icon: <Building2 className="h-8 w-8 text-primary" />,
-      title: "Gestión de Contactos",
-      description: "Organiza y segmenta tu base de datos de clientes potenciales"
+      title: "Sabor Inmobiliario",
+      description: "Contenido especializado para el sector inmobiliario"
     },
     {
-      icon: <CreditCard className="h-8 w-8 text-primary" />,
-      title: "Pago por Uso",
-      description: "Solo pagas por los emails que envías, sin costes fijos"
+      icon: <Mail className="h-8 w-8 text-primary" />,
+      title: "Servicio Express",
+      description: "Envía campañas tan rápido como preparas un café"
     }
   ]
 
@@ -36,22 +36,22 @@ export default function IndexPage() {
         transition={{ duration: 0.8 }}
       >
         <Badge variant="secondary" className="mb-4">
-          Marketing Inmobiliario Simplificado
+          Tu Marketing Inmobiliario, Recién Hecho
         </Badge>
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-          Email Marketing
+          Cafetería
           <br />
-          Para Inmobiliarias
+          Inmobiliaria
         </h1>
         <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-          Impulsa tus ventas inmobiliarias con campañas de email marketing profesionales y efectivas
+          Donde el email marketing inmobiliario se sirve caliente y recién hecho
         </p>
         <div className="flex gap-4 justify-center mt-8">
           <Button size="lg" onClick={() => navigate('/register')}>
-            Empezar Ahora <ArrowRight className="ml-2 h-4 w-4" />
+            Pedir Ahora <Coffee className="ml-2 h-4 w-4" />
           </Button>
           <Button size="lg" variant="outline" onClick={() => navigate('/templates')}>
-            Ver Plantillas
+            Ver Menú
           </Button>
         </div>
       </motion.section>
@@ -79,36 +79,36 @@ export default function IndexPage() {
       {/* Pricing Section */}
       <section className="text-center space-y-12">
         <div className="space-y-4">
-          <h2 className="text-3xl font-bold">Precios Transparentes</h2>
+          <h2 className="text-3xl font-bold">Nuestro Menú de Precios</h2>
           <p className="text-gray-500 dark:text-gray-400">
-            Paga solo por lo que uses, sin sorpresas
+            Elige tu blend perfecto de marketing inmobiliario
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <Card>
             <CardHeader>
-              <CardTitle>Plan Básico</CardTitle>
-              <CardDescription>Para inmobiliarias pequeñas</CardDescription>
+              <CardTitle>Café Solo</CardTitle>
+              <CardDescription>Para empezar el día</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div className="text-3xl font-bold">0.05€ / email</div>
                 <ul className="space-y-2 text-sm">
-                  <li>✓ Acceso a plantillas básicas</li>
+                  <li>✓ Plantillas básicas</li>
                   <li>✓ Hasta 1,000 contactos</li>
                   <li>✓ Soporte por email</li>
                 </ul>
                 <Button className="w-full" onClick={() => navigate('/register')}>
-                  Comenzar
+                  Pedir Ahora
                 </Button>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="border-primary">
             <CardHeader>
-              <CardTitle>Plan Pro</CardTitle>
-              <CardDescription>Para inmobiliarias medianas</CardDescription>
+              <CardTitle>Café con Leche</CardTitle>
+              <CardDescription>El favorito de la casa</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -119,7 +119,7 @@ export default function IndexPage() {
                   <li>✓ Soporte prioritario</li>
                 </ul>
                 <Button className="w-full" onClick={() => navigate('/register')}>
-                  Comenzar
+                  Pedir Ahora
                 </Button>
               </div>
             </CardContent>
@@ -127,24 +127,35 @@ export default function IndexPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Plan Enterprise</CardTitle>
-              <CardDescription>Para grandes inmobiliarias</CardDescription>
+              <CardTitle>Café Especial</CardTitle>
+              <CardDescription>Para los más exigentes</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div className="text-3xl font-bold">Personalizado</div>
                 <ul className="space-y-2 text-sm">
-                  <li>✓ Plantillas personalizadas</li>
+                  <li>✓ Plantillas exclusivas</li>
                   <li>✓ Contactos ilimitados</li>
-                  <li>✓ Soporte dedicado 24/7</li>
+                  <li>✓ Barista personal 24/7</li>
                 </ul>
                 <Button className="w-full" onClick={() => navigate('/contact')}>
-                  Contactar
+                  Consultar
                 </Button>
               </div>
             </CardContent>
           </Card>
         </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="text-center space-y-6">
+        <h2 className="text-3xl font-bold">¿Listo para servir el mejor marketing inmobiliario?</h2>
+        <p className="text-gray-500 dark:text-gray-400 max-w-[600px] mx-auto">
+          Únete a Cafetería Inmobiliaria y descubre cómo el email marketing puede calentar tus ventas
+        </p>
+        <Button size="lg" onClick={() => navigate('/register')}>
+          Empezar Ahora <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
       </section>
     </div>
   )
