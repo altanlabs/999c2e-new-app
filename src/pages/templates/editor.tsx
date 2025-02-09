@@ -1,24 +1,24 @@
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { useNavigate } from "react-router-dom"
-import { ArrowLeft, Save, Image, Type, Layout, Coffee, Eye, Undo, Redo } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft, Save, Image, Type, Layout, Coffee, Eye, Undo, Redo } from "lucide-react";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip";
 
 const blockTypes = [
   {
@@ -45,11 +45,11 @@ const blockTypes = [
     icon: <Image className="h-4 w-4" />,
     variants: ["Simple", "Galería", "Carrusel"]
   }
-]
+];
 
-export default function TemplateEditor() {
-  const navigate = useNavigate()
-  const [activeTab, setActiveTab] = useState("blocks")
+const TemplateEditor = () => {
+  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState("blocks");
 
   return (
     <div className="h-screen flex flex-col">
@@ -127,7 +127,7 @@ export default function TemplateEditor() {
                               className="h-20 flex flex-col gap-2"
                               draggable
                               onDragStart={(e) => {
-                                e.dataTransfer.setData("text/plain", \`\${blockType.id}-\${variant}\`)
+                                e.dataTransfer.setData("text/plain", `${blockType.id}-${variant}`);
                               }}
                             >
                               {blockType.icon}
@@ -222,9 +222,9 @@ export default function TemplateEditor() {
               className="min-h-full"
               onDragOver={(e) => e.preventDefault()}
               onDrop={(e) => {
-                e.preventDefault()
-                const data = e.dataTransfer.getData("text/plain")
-                console.log("Dropped block:", data)
+                e.preventDefault();
+                const data = e.dataTransfer.getData("text/plain");
+                console.log("Dropped block:", data);
               }}
             >
               <div className="border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-lg p-8 text-center text-muted-foreground">
@@ -235,5 +235,7 @@ export default function TemplateEditor() {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default TemplateEditor;
